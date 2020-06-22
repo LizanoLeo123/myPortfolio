@@ -34,19 +34,29 @@
     flex: 1;
   }
 
-  header {
-    margin: 0;
-    padding: 30px;
-    opacity: 1;
-  }
-
-  .toolbar {
-    position: fixed;
-    /* padding: 60px; */
-    padding-bottom: 30px;
+  html, header {
     top: 0;
     left: 0;
     right: 0;
+    margin: 0;
+    padding: 0;
+    opacity: 1;
+  }
+
+  body {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .toolbar {
+    position: absolute;
+    /* padding: 60px; */
+    /* padding-bottom: 30px; */
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    width: 100%;
     height: 70px;
     display: flex;
     align-items: center;
@@ -62,8 +72,10 @@
 
   .bg{
     position: fixed;
+    top: 0;
     left: 0;
     right: 0;
+    margin: 0;
     /* display: flex; */
     /* margin-top: 60px; */
     /* padding: 100%; */
@@ -77,6 +89,7 @@
   }
 
   .content {
+    left: 0;
     width: 100%;
     height: 100%;
     position: absolute;
@@ -100,8 +113,8 @@
   }
 
   .content-about {
+    margin-left: 0;
     background-color: #333;
-    margin-top: 0;
     padding-top: 10%;
     padding-bottom: 10%;
   }
@@ -132,9 +145,9 @@
   }
 
   /* Create an active/current tablink class */
-  .tab button.active {
+  /* .tab button.active {
     background-color: #838383;
-  }
+  } */
 
   /* Style the tab content */
   .tabcontent {
@@ -145,6 +158,8 @@
   }
   
 </style>
+<!-- Background -->
+<div class="bg"></div>
 <header>
   <!-- Toolbar -->
   <div class="toolbar" role="banner" >
@@ -165,8 +180,6 @@
   </div>
 </header>
 <body>
-  <!-- Background -->
-  <div class="bg"></div>
   <div class="content" role="main">
     <!-- First container -->
     <div class="content-header" id="title">
