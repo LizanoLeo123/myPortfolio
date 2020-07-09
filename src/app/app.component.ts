@@ -7,7 +7,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'mi-portafolio';
-  viewAboutMe() {
-    document.getElementById( 'about' ).scrollIntoView({block: "end", behavior: "smooth"});
-  }
 }

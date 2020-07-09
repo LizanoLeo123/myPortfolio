@@ -7,6 +7,8 @@
 <!-- * * * * * * * to get started with your project! * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
   :host {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -17,12 +19,18 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
+  html {
+    font-size: 14px;
+  }
+
   h1,
   h2,
   h3,
   h4,
   h5,
   h6 {
+    font-weight: bold;
+    line-height: 2;
     margin: 8px 0;
   }
 
@@ -48,31 +56,10 @@
     width: 100%;
   }
 
-  .toolbar {
-    position: absolute;
-    /* padding: 60px; */
-    /* padding-bottom: 30px; */
-    top: 0;
-    left: 0;
-    right: 0;
-    margin: 0;
-    width: 100%;
-    height: 70px;
-    display: flex;
-    align-items: center;
-    background-color: #7c7c7c;
-    opacity: 1;
-    color: white;
-    font-weight: 600;
-  }
-
-  .toolbar img,span {
-    margin-left: 20px;
-  }
-
   .bg{
     position: fixed;
     top: 0;
+    bottom: 0;
     left: 0;
     right: 0;
     margin: 0;
@@ -96,7 +83,7 @@
     align-content: center;
     text-align: center;
     /* display: flex; */
-    margin-top: 50px;
+    margin-top: 40px;
   }
   .content h1,h2,h3,h4,h5 {
     font-family: "Raleway", sans-serif;
@@ -104,13 +91,30 @@
   }
 
   .content-header {
-    padding-top: 15%;
+    padding-top: 10%;
     padding-bottom: 15%;
   }
 
   .content-header img {
     border-radius: 50%;
   }
+
+  .content-header .phrase {
+    margin:auto;
+    width: 30%;
+    text-align: center;
+  }
+
+@media (max-width: 400px) {
+  .content-header img {
+    height: 50px;
+  }
+
+  .content-header .phrase{
+    margin: auto;
+    width: 80%;
+  }
+}
 
   .content-about {
     margin-left: 0;
@@ -119,65 +123,60 @@
     padding-bottom: 10%;
   }
 
-  /* Style the tab */
-  .tab {
-    overflow: hidden;
-    /* border: 1px solid #ccc; */
-    /* background-color: #f1f1f1; */
+  .content-about .myInfo {
+    margin: auto;
+    width: 80%;
   }
 
-  /* Style the buttons that are used to open the tab content */
-  .tab button {
+  .content-footer {
+    align-items: flex-start;
+    margin-top: 10px;
+    margin-bottom: 100px;
+  }
+
+  .content-footer .p {
+    display: inline;
+    text-align: justify;
+  }
+
+  .vl {
+    border-left: 2px solid white;
+    height: 150px;
+  }
+
+  .fa {
+    padding: 8px;
+    font-size: 30px;
+    width: 45px;
+    height: 45px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+    border-radius: 50%;
+  }
+
+  .fa-facebook-square {
     color: white;
-    font-family: "Raleway",sans-serif;
-    background-color: inherit;
-    float: left;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 14px 16px;
-    transition: 0.3s;
   }
 
-  /* Change background color of buttons on hover */
-  .tab button:hover {
-    background-color:#888888;
+  .fa-linkedin-square {
+    color: white;
   }
 
-  /* Create an active/current tablink class */
-  /* .tab button.active {
-    background-color: #838383;
+  .fa-github {
+    color: white;
+  }
+
+/*
+  .fa:hover {
+    opacity: 0.7;
   } */
-
-  /* Style the tab content */
-  .tabcontent {
-    display: none;
-    padding: 6px 12px;
-    border: 1px solid #ccc;
-    border-top: none;
-  }
   
 </style>
 <!-- Background -->
 <div class="bg"></div>
 <header>
-  <!-- Toolbar -->
-  <div class="toolbar" role="banner" >
-    <img
-      width="40"
-      alt="Controller Logo"
-      src="https://www.freeiconspng.com/uploads/controller-game-icon-10.png"
-    />
-
-    <span>Virtual Portfolio Leonardo Lizano</span>
-    <div class="spacer"></div>
-    <div class="tab">
-      <button id="aboutButton" class="tablinks" (click)="viewAboutMe()">About Me</button>
-      <button class="tablinks" >Games</button>
-      <button class="tablinks" >Contact</button>
-      <!-- <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button> -->
-    </div>
-  </div>
+<app-navigation-bar></app-navigation-bar>
 </header>
 <body>
   <div class="content" role="main">
@@ -190,9 +189,9 @@
       />
       <h1>Software Engineering Student, Game Developer</h1>
       <hr style="margin:auto; width:25%; border: 2px solid white">
-      <div style="margin:auto;width: 20%;text-align: center;">
-        <h3>Choose a job you love, and you will never have to work a day in your life</h3>
-        <h4>-Confucius-</h4>
+      <div class="phrase">
+        <h4>Choose a job you love, and you will never have to work a day in your life</h4>
+        <h5>-Confucius-</h5>
       </div>
     </div>
     <div style="height: 250px;"></div>
@@ -203,28 +202,61 @@
       alt="Unity Logo"
       src="https://www.nacion.com/resizer/afIpCVM9DAVZk0JvaoyB8fsYCKk=/600x0/center/middle/filters:quality(100)/arc-anglerfish-arc2-prod-gruponacion.s3.amazonaws.com/public/TXZGQ7JN2FD4HK7I5YXCB3SET4.jpg"
       />
-      <div style="margin: auto;width: 80%;">
-        <h3>From Costa Rica, born in San José, living in La Fortuna, San Carlos</h3>
-        <h3>21 years old, finished highschool in 2017, bachelor in medium education,
+      <div class="myInfo">
+        <h5>From Costa Rica, born in San José, living in La Fortuna, San Carlos</h5>
+        <h5>21 years old, finished highschool in 2017, bachelor in medium education,
            also middle level technician degree in computing and software development,
-          both titles in Colegio Agropecuario de San Carlos</h3>
-          <h3>Currently studying software engineering at Tecnológico de Costa Rica, 3rd year of career</h3>
-          <h3>Passionate for videogames and game development, been using Unity for around a year, also taken a couple online courses</h3>  
+          both titles in Colegio Agropecuario de San Carlos</h5>
+          <h5>Currently studying software engineering at Tecnológico de Costa Rica, 3rd year of career</h5>
+          <h5>Passionate for videogames and game development, been using Unity for around a year, also taken a couple online courses</h5>  
       </div>
       </div>
     <div style="height: 250px;"></div>
-    <!-- <div id="about" class="content-footer">
-      <h3>Aqui va mi informacion de contacto</h3>
-    </div> -->
+    <footer class="page-footer font-small darken-3">
+      <div id="about" class="content-footer">
+        <div class="container-fluid text-center text-md-left">
+
+          <!-- Grid row -->
+          <div class="row">
+      
+            <!-- Grid column -->
+            <div class="col-md-5 mt-md-0 mt-3 ml-5">
+      
+              <!-- Content -->
+              <h5 class="text-uppercase font-weight-bold">Contact information</h5>
+              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Expedita sapiente sint, nulla, nihil
+                repudiandae commodi voluptatibus corrupti animi sequi aliquid magnam debitis, maxime quam recusandae
+                harum esse fugiat. Itaque, culpa?</p>
+      
+            </div>
+            <!-- Grid column -->
+      
+            <hr class="clearfix w-100 d-md-none pb-3">
+            <div class="vl"></div>
+      
+            <!-- Grid column -->
+            <div class="col-md-5 mb-md-0 mb-3">
+              <h5 class="text-uppercase font-weight-bold">Social Networks</h5>
+              <div class="mb-5 flex-center">
+                <!-- Facebook -->
+                <a href="#" class="fa fa-facebook-square"></a>
+                <!--Linkedin -->
+                <a href="#" class="fa fa-linkedin-square"></a>
+                <!--GitHub -->
+                <a href="#" class="fa fa-github"></a>
+            </div>
+      
+            </div>
+            <!-- Grid column -->
+      
+          </div>
+          <!-- Grid row -->
+      
+        </div>
+      </div>
+      <div class="footer-copyright text-center py-3">© 2020 Copyright:
+        <a> Leonardo Lizano.</a>
+      </div>
+    </footer> 
   </div>
 </body>
-
-<script>
-  function viewTitle() {
-    document.getElementById( 'title' ).scrollIntoView();
-  }
-
-  function viewAboutInfo() {
-    document.getElementById( 'about' ).scrollIntoView();
-  }
-</script>
