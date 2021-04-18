@@ -19,4 +19,14 @@ export class NavigationBarComponent implements OnInit {
     this.isMenuCollapsed = true;
   }
 
+  viewMyGames() {
+    document.getElementById('games').scrollIntoView({ block: "end", behavior: "smooth" });
+    this.isMenuCollapsed = true;
+  }
+
+  viewContact() {
+    document.getElementById('contact').scrollIntoView({ block: "end", behavior: "smooth" });
+    this.isMenuCollapsed = true;
+  }
+
 }

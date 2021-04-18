@@ -7,7 +7,7 @@
 <!-- * * * * * * * to get started with your project! * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
   :host {
@@ -96,7 +96,18 @@
   }
 
   .content-header img {
-    border-radius: 50%;
+    border-radius: 0%;
+  }
+
+  .content-games {
+    display: block;
+    justify-content: center;
+    align-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    /* padding: 6rem; */
+    padding-top: 2%;
+    padding-bottom: 2%;
   }
 
   .content-header .phrase {
@@ -144,6 +155,12 @@
     height: 150px;
   }
 
+@media (max-width: 767px) {
+  .vl {
+    display: none;
+  }
+}
+
   .fa {
     padding: 8px;
     font-size: 30px;
@@ -155,17 +172,28 @@
     border-radius: 50%;
   }
 
-  .fa-facebook-square {
+  .fa-facebook-square:hover,
+  .fa-linkedin-square:hover,
+  .fa-github:hover {
+    color: lightgray;
+  }
+
+  .fa-facebook-square,
+  .fa-linkedin-square,
+  .fa-github,
+  .fa-envelope,
+  .fa-phone-square,
+  .fa-gamepad {
     color: white;
   }
 
-  .fa-linkedin-square {
+  /* .fa-linkedin-square {
     color: white;
   }
 
   .fa-github {
     color: white;
-  }
+  } */
 
 /*
   .fa:hover {
@@ -187,7 +215,13 @@
       alt="Unity Logo"
       src="../assets/images/UnityLogo.png"
       />
-      <h1>Software Engineering Student, Game Developer</h1>
+      <img
+      height="100"
+      alt="Unreal Engine Logo"
+      src="../assets/images/logo_unreal.png"
+      />
+      <h1>Leonardo Lizano - Software and Game development Portfolio</h1>
+      <h2>Computer Engineering Student, Game Developer</h2>
       <hr style="margin:auto; width:25%; border: 2px solid white">
       <div class="phrase">
         <h4>Choose a job you love, and you will never have to work a day in your life</h4>
@@ -196,24 +230,28 @@
     </div>
     <div style="height: 250px;"></div>
     <div class="content-about" id="about">
-      <h1>About me</h1>
+      <h2>About me</h2>
       <img
       height="200"
-      alt="Unity Logo"
+      alt="TEC San Carlos"
       src="https://www.nacion.com/resizer/afIpCVM9DAVZk0JvaoyB8fsYCKk=/600x0/center/middle/filters:quality(100)/arc-anglerfish-arc2-prod-gruponacion.s3.amazonaws.com/public/TXZGQ7JN2FD4HK7I5YXCB3SET4.jpg"
       />
       <div class="myInfo">
-        <h5>From Costa Rica, born in San José, living in La Fortuna, San Carlos</h5>
-        <h5>21 years old, finished highschool in 2017, bachelor in medium education,
-           also middle level technician degree in computing and software development,
-          both titles in Colegio Agropecuario de San Carlos</h5>
-          <h5>Currently studying software engineering at Tecnológico de Costa Rica, 3rd year of career</h5>
-          <h5>Passionate for videogames and game development, been using Unity for around a year, also taken a couple online courses</h5>  
+        <h5>From Costa Rica, born in San José, living in La Fortuna, San Carlos.</h5>
+        <h5>22 years old, bachelor in medium education,
+           also middle level technician degree in informatics focused on software development,
+          both titles in Colegio Agropecuario de San Carlos.</h5>
+        <h5>Currently studying Computer Engineering at Tecnológico de Costa Rica, last year of career</h5>
+        <h5>Passionate for videogames and game development, been using Unity for around two years for learning, projects and with online courses.</h5>  
       </div>
-      </div>
+    </div>
+    <div class="content-games" id="games">
+      <app-main-view></app-main-view>
+      <yt-player [videoId]="'uNX-LiD5mO4'"></yt-player>
+    </div>
     <div style="height: 250px;"></div>
     <footer class="page-footer font-small darken-3">
-      <div id="about" class="content-footer">
+      <div id="contact" class="content-footer">
         <div class="container-fluid text-center text-md-left">
 
           <!-- Grid row -->
@@ -224,10 +262,16 @@
       
               <!-- Content -->
               <h5 class="text-uppercase font-weight-bold">Contact information</h5>
-              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Expedita sapiente sint, nulla, nihil
-                repudiandae commodi voluptatibus corrupti animi sequi aliquid magnam debitis, maxime quam recusandae
-                harum esse fugiat. Itaque, culpa?</p>
-      
+              <p class="d-flex text-white">Currently working on a Virtual Reality Project, eager to find a Gamedevelopment Role on a company for Professional Practice.</p>
+              <p class="d-flex text-white">Software development & Game development in Unity</p>
+              <div class="mb-0 d-flex">
+                <div class="fa fa-envelope ml-0"></div>
+                <p class="mt-3 text-white">leoln123@live.com</p>
+              </div>
+              <div class="mb-0 d-flex">
+                <div class="fa fa-phone-square ml-0"></div>
+                <p class="mt-3 text-white">+(506) 84211810</p>
+              </div>
             </div>
             <!-- Grid column -->
       
@@ -236,14 +280,16 @@
       
             <!-- Grid column -->
             <div class="col-md-5 mb-md-0 mb-3">
-              <h5 class="text-uppercase font-weight-bold">Social Networks</h5>
+              <h5 class="text-uppercase font-weight-bold">Networks</h5>
               <div class="mb-5 flex-center">
                 <!-- Facebook -->
-                <a href="#" class="fa fa-facebook-square"></a>
+                <a href="https://www.facebook.com/leonardo.lizanonajera"  target="_blank" class="fa fa-facebook-square"></a>
                 <!--Linkedin -->
-                <a href="#" class="fa fa-linkedin-square"></a>
+                <a href="https://www.linkedin.com/in/leonardo-lizano-nájera-a72a15186/"  target="_blank" class="fa fa-linkedin-square"></a>
                 <!--GitHub -->
-                <a href="#" class="fa fa-github"></a>
+                <a href="https://github.com/LizanoLeo123"  target="_blank" class="fa fa-github"></a>
+                <!-- Itch.io -->
+                <a href="https://leonix99.itch.io"  target="_blank" class="fa fa-gamepad"></a>
             </div>
       
             </div>
@@ -254,8 +300,8 @@
       
         </div>
       </div>
-      <div class="footer-copyright text-center py-3">© 2020 Copyright:
-        <a> Leonardo Lizano.</a>
+      <div class="footer-copyright text-center text-white py-3">© 2020 Copyright:
+        <a  class="text-white"> Leonardo Lizano.</a>
       </div>
     </footer> 
   </div>

@@ -6,17 +6,22 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MainViewComponent } from './main-view/main-view.component';
 import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
+import { YoutubePlayerComponentComponent } from './youtube-player-component/youtube-player-component.component';
+
+import { YtPlayerAngularModule } from '../../node_modules/yt-player';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainViewComponent,
-    NavigationBarComponent
+    NavigationBarComponent,
+    YoutubePlayerComponentComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    YtPlayerAngularModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
